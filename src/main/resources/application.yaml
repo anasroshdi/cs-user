@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/userdb} # Default for local dev database
+    username: ${DATABASE_USERNAME:user}
+    password: ${DATABASE_PASSWORD:password} # Safe default for local dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: ${JWT_SECRET:very-long-and-random-dev-secret-key-that-is-not-for-prod} # Safe default for local dev
+  expiration: ${JWT_EXPIRATION:3600000} # 1 hour
